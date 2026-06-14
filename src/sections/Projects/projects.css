@@ -1,0 +1,198 @@
+.projects {
+    padding: 6rem 2rem;
+    background: transparent;
+    /* Let body mesh show through */
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    background: rgba(17, 25, 40, 0.6);
+    /* Glass effect */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    /* Softer corners */
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+    /* Deep shadow */
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-content {
+    z-index: 2;
+    position: relative;
+}
+
+.card-category {
+    color: var(--accent-secondary);
+    /* Cyan pop */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.card-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.card-details {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.card-details li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.card-details li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    /* Purple pop */
+    font-weight: bold;
+}
+
+.card-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.tech-tag {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: var(--accent);
+}
+
+.card-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.card-link {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
+}
+
+.card-link:hover {
+    color: var(--accent);
+    border-color: transparent;
+}
+
+/* Vibrancy: Gradient Blobs */
+.card-gradient {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60%;
+    height: 120%;
+    opacity: 0.15;
+    filter: blur(80px);
+    /* Heavy blur for glow */
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 50%;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .card-gradient {
+    opacity: 0.25;
+    /* Brighter on hover */
+}
+
+/* Custom Gradients for projects */
+.gradient-0 {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+/* Purple-Pink */
+.gradient-1 {
+    background: linear-gradient(135deg, #06b6d4, #10b981);
+}
+
+/* Cyan-Emerald */
+.gradient-2 {
+    background: linear-gradient(135deg, #f43f5e, #fbbf24);
+}
+
+/* Rose-Amber */
+.gradient-3 {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+/* Blue-Violet */
+.gradient-4 {
+    background: linear-gradient(135deg, #6366f1, #d946ef);
+}
+
+/* Indigo-Fuchsia */
+
+@media (max-width: 900px) {
+    .project-card {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+
+    .card-gradient {
+        width: 100%;
+        height: 40%;
+        bottom: 0;
+        top: auto;
+        right: 0;
+    }
+}
